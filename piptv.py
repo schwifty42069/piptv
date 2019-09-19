@@ -4,6 +4,7 @@ import vlc
 import time
 import os
 from threading import Thread
+import platform
 
 
 class CableBox(Thread):
@@ -91,8 +92,10 @@ class CableBox(Thread):
                              'vh1': 'http://ustvgo.tv/vh1/',
                              'we tv': 'http://ustvgo.tv/we-tv/',
                              'wwe network': 'http://ustvgo.tv/wwe-network/'}
-        self.instance = vlc.Instance("--verbose=-1" +
-                                     "--vout=opengl")
+        instance_args = "--verbose=-1" + "--vout=opengl"
+        if platform.system() == "Windows":
+            instance_args += "--plugins-path=C:\Program Files\VideoLAN\VLC\plugins"
+        self.instance = vlc.Instance(instance_args)
         self.player = vlc.MediaPlayer(self.instance)
         self.player.set_fullscreen(True)
         self.daemon = False
