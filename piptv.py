@@ -104,7 +104,10 @@ class CableBox(Thread):
     def get_hls_hotlink(self, channel):
         try:
             bsoup = Soup(requests.get(self.channel_dict[channel.lower()]).text, 'html.parser')
-            return bsoup.findAll("script")[15].next_element.split(" file: ")[1].split(',')[0].strip("\'")
+            try:
+                return bsoup.findAll("script")[15].next_element.split(" file: ")[1].split(',')[0].strip("\'")
+            except IndexError:
+                return bsoup.findAll("script")[14].next_element.split(" file: ")[1].split(',')[0].strip("\'")
         except KeyError:
             print("\n\033[1;31;49mInvalid channel name!\n")
             return 1
