@@ -134,8 +134,9 @@ def main():
     except AssertionError:
         a = sys.version_info.major
         b = sys.version_info.minor
-        print("Wrong Python version. Need Python 3. Found ", a, b)
-        print("If you actually installed Python 3, but this error shows instead, then the correct syntax would be: ") + '\033[1m' + 'python3 piptv.py' + '\033[0m'
+        print '\033[91m' + '\033[1m'
+        print("Wrong Python version. Need Python 3. Found Python {}.{}".format(a,b))
+        print("If you actually installed Python 3, but this error shows instead, then the correct syntax would be: ") + '\033[92m' + 'python3 piptv.py' + '\033[0m'
         return
     while True:
         stb = CableBox()
