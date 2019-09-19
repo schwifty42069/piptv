@@ -7,8 +7,8 @@ USE:
 At the prompt, you can immediately type the channel name you wish to stream, you can type **list** to see all
 channels, or you can type **quit** to exit.
 
-**NOTE:
+**NOTE:**
 
-I haven't tested this in a windows environment yet so I'm sure it will be a bit buggy.**
+**I haven't tested this in a windows environment yet so I'm sure it will be a bit buggy.**
 
 Enjoy!
