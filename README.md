@@ -28,6 +28,8 @@ python3 -m pip install -r requirements.txt
 pip install -r requirements.txt
 ```
 
+If you need a more detailed explanation for windows 10, see doc/windows.md in this repository
+
 **Use:**
 
 To run the script, navigate to the directory where you downloaded it and type the following:
