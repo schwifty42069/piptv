@@ -9,7 +9,7 @@ import platform
 
 
 class CableBox(Thread):
-    def __init__(self):
+    def __init__(self, **kwargs):
         super().__init__()
         self.channel_dict = {'a&e': 'http://ustvgo.tv/ae-networks-live-streaming-free/',
                              'abc': 'http://ustvgo.tv/abc-live-streaming-free/',
@@ -93,7 +93,15 @@ class CableBox(Thread):
                              'vh1': 'http://ustvgo.tv/vh1/',
                              'we tv': 'http://ustvgo.tv/we-tv/',
                              'wwe network': 'http://ustvgo.tv/wwe-network/'}
-        instance_args = "--verbose=-1" + "--vout=opengl"
+        if "debug" in kwargs.keys():
+            self.debug = kwargs.get('debug')
+        else:
+            self.debug = False
+        if self.debug:
+            self.instance_verbosity = "--verbose=3"
+        else:
+            self.instance_verbosity = "--verbose=-1"
+        instance_args = self.instance_verbosity + "--vout=opengl"
         if platform.system() == "Windows":
             instance_args += "--plugins-path=C:\Program Files\VideoLAN\VLC\plugins"
         self.instance = vlc.Instance(instance_args)
@@ -123,10 +131,10 @@ class CableBox(Thread):
         while True:
             try:
                 time.sleep(0.1)
-                os.system('cls' if os.name == 'nt' else 'clear')
             except KeyboardInterrupt:
                 print("\n\033[1;31;49mStopping..\n")
                 self.player.stop()
+                os.system('cls' if os.name == 'nt' else 'clear')
                 break
 
 
@@ -159,8 +167,10 @@ def main():
             stb.player.set_mrl(input("\nhotlink: "))
             stb.run()
         else:
-            print("\n\033[1;33;49mTrying to tune to {}...\n".format(command))
-            stb.tune_to_channel(command)
+            if "--debug" in command:
+                print("\n\033[1;33;49mTrying to tune to {}...\n".format(command))
+                stb = CableBox(debug=True)
+                stb.tune_to_channel(command.split(" --debug")[0])
 
 
 if __name__ == "__main__":
