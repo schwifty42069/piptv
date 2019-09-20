@@ -28,7 +28,7 @@ python3 -m pip install -r requirements.txt
 pip install -r requirements.txt
 ```
 
-If you need a more detailed explanation for windows 10, see doc/windows.md in this repository
+If you need a more detailed explanation for windows 10, see [doc/windows.md](https://github.com/schwifty42069/piptv/blob/master/doc/windows.md) in this repository
 
 **Use:**
 
