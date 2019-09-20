@@ -50,5 +50,23 @@ Upon running the script, you can type **list** to see the channel list, you can 
 in the channel list** to tune to that channel, or you can type **quit** to quit. To stop an actively 
 streaming channel, hit **CTRL + C** to stop the stream and return to the prompt.
 
+**Debugging**
+
+The option to pass a debug flag has been added, so if you're experiencing issues you can 
+add --debug to the end of the channel name when attempting to tune, and you will see a very verbose
+debug output in the terminal. For example, when prompted to enter a command after running the script,
+instead of typing.. 
+
+```
+espn
+```
+
+to tune to espn, type
+
+```
+espn --debug
+```
+
+and you will see the additional debug output in the terminal!
 
 Enjoy!
