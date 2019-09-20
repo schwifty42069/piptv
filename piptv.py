@@ -171,6 +171,9 @@ def main():
                 print("\n\033[1;33;49mTrying to tune to {}...\n".format(command))
                 stb = CableBox(debug=True)
                 stb.tune_to_channel(command.split(" --debug")[0])
+            else:
+                print("\n\033[1;33;49mTrying to tune to {}...\n".format(command))
+                stb.tune_to_channel(command.split(" --debug")[0])
 
 
 if __name__ == "__main__":
