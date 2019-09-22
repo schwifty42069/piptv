@@ -4,16 +4,18 @@ This is an incredibly simple module.
 
 **Setup** 
 
-*This is assuming you have python 3.x and pip installed, if you don't and you're using 
+*These setup instructions assume you have vlc installed before setup. If you don't have it installed, you can find a download link
+[here]("https://www.videolan.org/vlc"). **Please make sure that the architecture of vlc (64bit/32bit) matches the architecture
+of your python installation!** These instructions also assume you have python 3.x and pip installed. If you don't and you're using 
 windows, go to python.org and install the latest version of python (which will have pip bundled with it)
-Make sure you choose to install for all users and to add to your path (you will see the check boxes in
+Make sure you choose to install for all users and to add python to your path (you will see the check boxes in
 the install dialog) For ubuntu and other Debian based Linux distros, open a terminal and type the following*:
 
 ```
 apt install python3
 ```
 
-Once you have finished installing python and pip, the process is as simple as navigating to the directory 
+Once you have finished installing vlc, python and pip, the process is as simple as navigating to the directory 
 that you downloaded/cloned piptv into, and typing the following in your terminal:
 
 **For Ubuntu/Debian**
