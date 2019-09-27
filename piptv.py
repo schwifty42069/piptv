@@ -1,11 +1,11 @@
 import sys
-import requests
 from bs4 import BeautifulSoup as Soup
 import vlc
 import time
 import os
 from threading import Thread
 import platform
+import cfscrape
 
 
 class CableBox(Thread):
@@ -111,7 +111,8 @@ class CableBox(Thread):
 
     def get_hls_hotlink(self, channel):
         try:
-            bsoup = Soup(requests.get(self.channel_dict[channel.lower()]).text, 'html.parser')
+            scraper = cfscrape.create_scraper()
+            bsoup = Soup(scraper.get(self.channel_dict[channel.lower()]).content, 'html.parser')
             for s in bsoup.findAll("script"):
                 if "player.setup" in str(s):
                     return s.next_element.split(" file: ")[1].split(',')[0].strip("\'")

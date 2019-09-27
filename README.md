@@ -1,6 +1,9 @@
+**PIPTV IS CURRENTLY DOWN AS THE SITE IT SCRAPES HAS ADDED DDOS PROTECTION. PLEASE DO NOT OPEN ANY ISSUES, WE ARE ACTIVELY WORKING ON A WORKAROUND**
+========================================================
+
 PIPTV - A simple Python IPTV client with 82 channels including NFL Network, ESPN, FS1 & FS2
 
-This is an incredibly simple module.
+*This is an incredibly simple module. With that being said, I provide this code and all support free of charge, so any donations are welcome and can be sent to this bitcoin address: **bc1qahz93vyljhjj0fsadu2m8zdhaqdaf60gnc7y2y** Thank you and enjoy!*
 
 **Setup** 
 
